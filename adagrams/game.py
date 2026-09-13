@@ -29,6 +29,16 @@ LETTER_POOL = {
     'Z': 1
 }
 
+SCORES = {
+    'AEIOULNRST': 1,
+    'DG': 2,
+    'BCMP': 3,
+    'FHVWY': 4,
+    'K': 5,
+    'JX': 8,
+    'QZ': 10
+}
+
 def draw_letters():
     letters = ''
     drawn_letters = []
@@ -50,7 +60,6 @@ def uses_available_letters(word, letter_bank):
     letter_bank_copy = {}
     word = word.upper()
 
-
     for letter in letter_bank:
         if letter in letter_bank_copy:
             letter_bank_copy[letter]+=1
@@ -67,7 +76,18 @@ def uses_available_letters(word, letter_bank):
     return True
 
 def score_word(word):
-    pass
+    score = 0
+    word = word.upper()
+    if len(word) > 6 and len(word) < 11:
+        score+=8
+
+    for letter in word:
+        for score_bracket in SCORES:
+            for score_letter in score_bracket:
+                if letter == score_letter:
+                    score+=SCORES[score_bracket]
+
+    return score
 
 def get_highest_word_score(word_list):
     pass
