@@ -63,10 +63,7 @@ def uses_available_letters(word, letter_bank):
     word = word.upper()
 
     for letter in letter_bank:
-        if letter in letter_bank_copy:
-            letter_bank_copy[letter] += 1
-        else:
-            letter_bank_copy[letter] = 1
+        letter_bank_copy[letter] = letter_bank_copy.get(letter, 0) + 1
 
     for letter in word:
         if letter_bank_copy.get(letter, 0) == 0:
