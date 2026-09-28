@@ -47,7 +47,9 @@ def draw_letters():
     for letter, count in LETTER_POOL.items():
         letters += letter * count
 
-    for i in range(10):
+    HAND_SIZE = 10
+
+    for i in range(HAND_SIZE):
         number = randint(0, len(letters) - 1)
         while number in numbers_drawn:
             number = randint(1, len(letters) - 1)
