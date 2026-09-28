@@ -78,8 +78,10 @@ def uses_available_letters(word, letter_bank):
 def score_word(word):
     score = 0
     word = word.upper()
-    if len(word) > 6 and len(word) < 11:
-        score+=8
+    LONG_WORD_BONUS_LENGTH_MIN = 7
+    LONG_WORD_BONUS = 8
+    if len(word) >= LONG_WORD_BONUS_LENGTH_MIN:
+        score += LONG_WORD_BONUS
 
     for letter in word:
         for score_bracket in SCORES:
