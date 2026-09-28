@@ -64,7 +64,7 @@ def uses_available_letters(word, letter_bank):
 
     for letter in letter_bank:
         if letter in letter_bank_copy:
-            letter_bank_copy[letter]+=1
+            letter_bank_copy[letter] += 1
         else:
             letter_bank_copy[letter] = 1
 
