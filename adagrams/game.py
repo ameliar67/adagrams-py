@@ -72,7 +72,7 @@ def uses_available_letters(word, letter_bank):
         if letter not in letter_bank_copy:
             return False
         if letter_bank_copy[letter] > 0:
-            letter_bank_copy[letter]-=1
+            letter_bank_copy[letter] -= 1
         else:
             return False
     return True
