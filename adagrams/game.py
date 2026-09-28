@@ -48,7 +48,7 @@ def draw_letters():
         letters += letter * count
 
     for i in range(10):
-        number = randint(1, len(letters) - 1)
+        number = randint(0, len(letters) - 1)
         while number in numbers_drawn:
             number = randint(1, len(letters) - 1)
         numbers_drawn.append(number)
