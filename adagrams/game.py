@@ -52,7 +52,7 @@ def draw_letters():
     for i in range(HAND_SIZE):
         number = randint(0, len(letters) - 1)
         while number in numbers_drawn:
-            number = randint(1, len(letters) - 1)
+            number = randint(0, len(letters) - 1)
         numbers_drawn.append(number)
         drawn_letters.append(letters[number])
 
