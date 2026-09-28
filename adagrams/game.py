@@ -40,12 +40,13 @@ SCORES = {
 }
 
 def draw_letters():
-    letters = ''
+    letters = []
     drawn_letters = []
     numbers_drawn = []
 
     for letter, count in LETTER_POOL.items():
-        letters += letter * count
+        for i in range(0, count):
+            letters.append(letter)
 
     for i in range(10):
         number = randint(0, len(letters) - 1)
