@@ -69,12 +69,10 @@ def uses_available_letters(word, letter_bank):
             letter_bank_copy[letter] = 1
 
     for letter in word:
-        if letter not in letter_bank_copy:
+        if letter_bank_copy.get(letter, 0) == 0:
             return False
-        if letter_bank_copy[letter] > 0:
-            letter_bank_copy[letter] -= 1
-        else:
-            return False
+
+        letter_bank_copy[letter] -= 1
     return True
 
 def score_word(word):
