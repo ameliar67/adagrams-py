@@ -91,6 +91,7 @@ def score_word(word):
 def get_highest_word_score(word_list):
     highest_score = 0
     highest_scoring_word = ''
+    words_with_highest_score = []
 
     for word in word_list:
         score = score_word(word)
@@ -98,6 +99,10 @@ def get_highest_word_score(word_list):
             highest_score = score
             highest_scoring_word = word
         elif score == highest_score:
+             words_with_highest_score.append(word)
+
+    if words_with_highest_score:
+        for word in words_with_highest_score:
             if len(word) == 10 or len(word) < len(highest_scoring_word):
                 if len(highest_scoring_word) != 10:
                     highest_scoring_word = word
